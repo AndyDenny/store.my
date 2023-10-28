@@ -1,2 +1,6 @@
 <?php
-echo "greetings";
+
+define('VG_ACCESS', true);
+
+
+require_once 'config.php';
