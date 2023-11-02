@@ -10,7 +10,7 @@ require_once 'config.php';
 require_once 'core/base/settings/internal_settings.php';
 
 try {
- RouteController::getInstance()->route();
+    RouteController::getInstance();//->route();
 }
 catch (Exception $e){
     exit($e->getMessage());

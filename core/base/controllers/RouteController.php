@@ -7,6 +7,7 @@ class RouteController
 {
     static private $_instance;
 
+
     static public function getInstance(){
         if (self::$_instance instanceof self){
             return self::$_instance;
