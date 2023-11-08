@@ -11,7 +11,6 @@ require_once 'libraries/functions.php';
 use core\base\controllers\RouteController;
 use core\base\exceptions\RouteException;
 
-
 try {
     RouteController::getInstance();//->route();
 
