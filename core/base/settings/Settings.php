@@ -61,15 +61,18 @@ class Settings
 
     public function glueProperties($class){
         $base_props = [];
+
         foreach ($this as $name => $item) {
             $property = $class::get($name);
 
             if (is_array($property) && is_array($item)){
+
                 $base_props[$name] = $this->arrayMergeRecursive($this->$name, $property);
+                continue;
             }
+            if (!$property) $base_props[$name] = $this->$name;
         }
-        pre($base_props);
-        exit();
+        return $base_props;
     }
 
     public function arrayMergeRecursive(){

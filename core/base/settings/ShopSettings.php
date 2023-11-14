@@ -30,8 +30,19 @@ class ShopSettings
         self::$_instance = new self;
         self::$_instance->base_settings = Settings::getInstance();
         $base_properties = self::$_instance->base_settings->glueProperties(get_class());
+        self::$_instance->setProperty($base_properties);
+
         return self::$_instance;
     }
+
+    protected function setProperty($properties){
+        if($properties){
+            foreach ($properties as $name => $property) {
+                $this->$name = $property;
+            }
+        }
+    }
+
 
     private function __construct(){
 

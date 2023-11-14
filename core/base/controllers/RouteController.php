@@ -24,7 +24,6 @@ class RouteController
         $s = Settings::get('routes');
         $s1 = ShopSettings::get('routes123');
 
-        pre($s1);
     }
 
 }
