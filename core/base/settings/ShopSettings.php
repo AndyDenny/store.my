@@ -9,8 +9,15 @@ class ShopSettings
 {
 
     static private $_instance;
+    private $baseSettings;
 
-    private $base_settings;
+    private $routes = [
+        'plugins' => [
+            'path' => 'core/plugins/',
+            'hrUrl' => false,
+            'dir' => false,
+        ],
+    ];
 
     private $templateArr = [
         'text' => ['name', 'phone','address', 'price'],
@@ -28,8 +35,8 @@ class ShopSettings
         }
 
         self::$_instance = new self;
-        self::$_instance->base_settings = Settings::getInstance();
-        $base_properties = self::$_instance->base_settings->glueProperties(get_class());
+        self::$_instance->baseSettings = Settings::getInstance();
+        $base_properties = self::$_instance->baseSettings->glueProperties(get_class());
         self::$_instance->setProperty($base_properties);
 
         return self::$_instance;
