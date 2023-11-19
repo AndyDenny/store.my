@@ -5,6 +5,7 @@ namespace core\base\controller;
 use core\base\exceptions\RouteException;
 use core\base\settings\Settings;
 use core\base\settings\ShopSettings;
+use Exception;
 
 class RouteController
 {
@@ -109,13 +110,11 @@ class RouteController
                 }
             }
 
-            exit();
-
         } else {
 
             try {
-                throw new \Exception('Не корректная диерктория сайта');
-            } catch (\Exception $e) {
+                throw new Exception('Не корректная диерктория сайта');
+            } catch (Exception $e) {
                 exit($e->getMessage());
             }
         }
