@@ -5,6 +5,7 @@ AddDefaultCharset utf-8
 DirectoryIndex index.php
 
 RewriteEngine On
-RewriteCond %{REQEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*) index.php
+
 
