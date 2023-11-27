@@ -46,8 +46,10 @@ abstract class BaseController
         $inputData = $args['inputMethod'];
         $outputData = $args['outputMethod'];
 
-        $this->$inputData();
-        $this->page = $this->$outputData();
+        $data = $this->$inputData();
+
+
+        $this->page = $this->$outputData($data);
 
         if($this->errors){
             $this->writeLog();
@@ -60,6 +62,7 @@ abstract class BaseController
     protected function render($path='',$parameters=[]){
 
         extract($parameters);
+
         if(!$path){
             $path = TEMPLATE . explode('controller',strtolower((new \ReflectionClass($this))->getShortName()))[0];
         }
