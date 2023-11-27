@@ -1,1 +1,1 @@
-<?php
+<h1 style="color: red"><?php echo $name;?></h1>

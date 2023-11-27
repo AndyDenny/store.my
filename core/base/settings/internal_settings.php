@@ -4,7 +4,7 @@ defined('VG_ACCESS') or die('Access denied');
 use core\base\exceptions\RouteException;
 
 
-const TEMPLATE = 'templates/default/';
+const TEMPLATE = 'template/default/';
 const ADMIN_TEMPLATES = 'core/admin/view/';
 
 const COOKIE_VERSION = '1.0.0';

@@ -12,7 +12,7 @@ use core\base\controller\RouteController;
 use core\base\exceptions\RouteException;
 
 try {
-    RouteController::getInstance();//->route();
+    RouteController::getInstance()->route();
 
 } catch (Exception $e){
     exit($e->getMessage());
