@@ -11,6 +11,8 @@ use core\base\settings\Settings;
 abstract class BaseController
 {
 
+    use \core\base\controller\BaseMethods; //TRAIT
+
     protected $page;
     protected $errors;
 

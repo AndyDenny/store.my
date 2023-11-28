@@ -29,7 +29,7 @@ class RouteController extends BaseController
     {
         $adress_str = $_SERVER["REQUEST_URI"];
 
-        if (strpos($adress_str, '/') === strlen($adress_str) - 1 && strrpos($adress_str, '/') !== 0) {
+        if (strrpos($adress_str, '/') === strlen($adress_str) - 1 && strrpos($adress_str, '/') !== 0) {
             $this->redirect(rtrim($adress_str, '/'), 301);
         }
 
