@@ -5,7 +5,7 @@ use core\base\exceptions\RouteException;
 
 
 const TEMPLATE = 'template/default/';
-const ADMIN_TEMPLATES = 'core/admin/view/';
+const ADMIN_TEMPLATE = 'core/admin/view/';
 
 const COOKIE_VERSION = '1.0.0';
 const CRYPT_KEY =  '';
