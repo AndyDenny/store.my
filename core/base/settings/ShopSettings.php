@@ -3,12 +3,14 @@
 
 namespace core\base\settings;
 
+use core\base\controller\Singleton;
 use core\base\settings\Settings;
 
 class ShopSettings
 {
 
-    static private $_instance;
+    use Singleton;
+
     private $baseSettings;
 
     private $routes = [
@@ -30,13 +32,12 @@ class ShopSettings
         return self::getInstance()->$property;
     }
 
-    static public function getInstance(){
+    static private function getInstance(){
         if(self::$_instance instanceof self){
             return self::$_instance;
         }
 
-        self::$_instance = new self;
-        self::$_instance->baseSettings = Settings::getInstance();
+        self::instance()->baseSettings = Settings::instance();
         $base_properties = self::$_instance->baseSettings->glueProperties(get_class());
         self::$_instance->setProperty($base_properties);
 
@@ -51,12 +52,4 @@ class ShopSettings
         }
     }
 
-
-    private function __construct(){
-
-    }
-
-    private function __clone(){
-
-    }
 }
