@@ -48,7 +48,7 @@ class Settings
     ];
 
     static public function get($property){
-        return self::getInstance()->$property;
+        return self::instance()->$property;
     }
 
     public function glueProperties($class){
