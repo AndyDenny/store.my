@@ -10,11 +10,16 @@ require_once 'libraries/functions.php';
 
 use core\base\exceptions\RouteException;
 use core\base\controller\RouteController;
+use core\base\exceptions\DbException;
+
 
 try {
     RouteController::instance()->route();
 
-} catch (Exception $e){
+}
+catch (RouteException $e){
     exit($e->getMessage());
-
+}
+catch (DbException $e){
+    exit($e->getMessage());
 }
