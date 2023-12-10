@@ -59,4 +59,36 @@ class BaseModel
 
          }
 
+        /**
+         * @param $table
+         * @param array $set
+         * 'fields'=>['id','name'],
+         * 'where' => ['id' => 1, 'name' => 'Masha'],
+         * 'operand' => ['=','<>'],
+         * 'condition' => ['AND'],
+         * 'order' => ['fio','name'],
+         * 'order_direction' => ['ACS','DESC'],
+         * 'limit' => '1',
+         */
+
+         final public function get($table,$set=[]){
+
+            $fields = $this->createFields($table,$set);
+            $where = $this->createWhere($table,$set);
+
+            $join_arr =  $this->createJoin($table,$set);
+            $fields .= $join_arr['fields'];
+            $join = $join_arr['join'];
+            $fields .= $join_arr['where'];
+
+            $fields = rtrim($fields,',');
+
+            $order = $this->createOrder($table,$set);
+
+            $limit = $set['limit'] ?? '';
+
+            $query = "SELECT $fields FROM $table $join $where $order $limit";
+
+            return $this->query($query);
+         }
 }
