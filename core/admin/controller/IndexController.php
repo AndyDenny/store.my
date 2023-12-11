@@ -14,15 +14,17 @@ class IndexController extends BaseController
 
         $db = Model::instance();
 
-//        $table = '';
+//        $table = 'articles';
+//
+//        $color = ['red','green','black'];
 //
 //        $res = $db->get($table,[
 //            'fields'=>['id','name'],
-//            'where' => ['fio' => 'smirnova', 'name' => 'Masha'],
-//            'operand' => ['=','<>'],
+//            'where' => ['name' => 'Masha', 'surname' => 'Smirnova', 'fio' => 'Andrey', 'car' => 'Porshe', 'color'=>$color],
+//            'operand' => ['IN', 'LIKE%','<>','=','NOT IN'],
 //            'condition' => ['AND'],
 //            'order' => ['fio','name'],
-//            'order_direction' => ['ACS','DESC'],
+//            'order_direction' => ['DESC'],
 //            'limit' => '1',
 //        ]);
 
